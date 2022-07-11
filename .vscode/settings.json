@@ -1,5 +1,14 @@
 {
     "cSpell.words": [
-        "shelterapp"
+        "alexcvzz",
+        "autopep",
+        "batisteo",
+        "mypy",
+        "pycodestyle",
+        "pydocstyle",
+        "pylance",
+        "pylint",
+        "shelterapp",
+        "yapf"
     ]
 }
