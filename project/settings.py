@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from os import getenv
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,8 +26,17 @@ SECRET_KEY = 'django-insecure-&68s!vpqs8!likb2ri4#6r1@isz%b6*gr!goetsoq84lx6#09=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+print(f"https://{getenv('CODESPACE_NAME')}.githubpreview.dev")
 
+ALLOWED_HOSTS = [
+    'localhost',
+    f"{getenv('CODESPACE_NAME')}-8000.githubpreview.dev"
+]
+
+# CSRF trusted origins
+CSRF_TRUSTED_ORIGINS = [
+    f"https://{getenv('CODESPACE_NAME')}-8000.githubpreview.dev"
+]
 
 # Application definition
 
