@@ -41,6 +41,7 @@
 				"ms-python.vscode-pylance",
 				"streetsidesoftware.code-spell-checker",
 				"batisteo.vscode-django",
+				"GitHub.copilot"
 			]
 		}
 	},
