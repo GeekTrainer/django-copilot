@@ -10,5 +10,6 @@
         "pylint",
         "shelterapp",
         "yapf"
-    ]
+    ],
+    "python.linting.enabled": false
 }
