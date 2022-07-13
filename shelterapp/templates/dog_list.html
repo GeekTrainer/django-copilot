@@ -1,0 +1,13 @@
+{# Create Django template to list all dogs using Bootstrap list group #}
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Dogs</h2>
+<ul class="list-group">
+    {% for dog in dogs %}
+    <li class="list-group-item">
+        <a href="{{ dog.get_absolute_url }}">{{ dog.name }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

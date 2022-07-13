@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import RegexValidator, MinValueValidator, MaxValueValidator
+from django.urls import reverse
 
 # Create your models here.
 
@@ -11,7 +12,6 @@ class Shelter(models.Model):
     # Create a phone number field with a regular expression for the format of ###-###-####
     phone_regex = RegexValidator(regex=r'^\d{3}-\d{3}-\d{4}$', message="Phone number must be entered in the format: ###-###-####")
     phone_number = models.CharField(validators=[phone_regex], max_length=12)
-
 
     def __str__(self):
         return self.name
@@ -27,3 +27,7 @@ class Dog(models.Model):
 
     def __str__(self):
         return self.name
+    
+    # Add get_absolute_url method to Dog model
+    def get_absolute_url(self):
+        return reverse('dog_detail', kwargs={'pk': self.pk})

@@ -1,0 +1,8 @@
+{# Create Django template to display dog details #}
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ dog.name }}</h1>
+<p>Age: {{ dog.age }}</p>
+<p>Shelter: {{ dog.shelter }}</p>
+{% endblock %}
