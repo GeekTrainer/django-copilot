@@ -31,3 +31,7 @@ class Dog(models.Model):
     # Add get_absolute_url method to Dog model
     def get_absolute_url(self):
         return reverse('dog_detail', kwargs={'pk': self.pk})
+
+class Owner(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
