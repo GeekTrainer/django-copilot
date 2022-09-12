@@ -8,6 +8,7 @@ from django.urls import reverse
 class Shelter(models.Model):
     name = models.CharField(max_length=50)
     address = models.TextField(max_length=200)
+    email = models.EmailField(max_length=50)
     
     # Create a phone number field with a regular expression for the format of ###-###-####
     phone_regex = RegexValidator(regex=r'^\d{3}-\d{3}-\d{4}$', message="Phone number must be entered in the format: ###-###-####")
