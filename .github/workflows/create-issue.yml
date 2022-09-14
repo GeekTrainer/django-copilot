@@ -1,0 +1,18 @@
+on:
+  pull_request:
+    branches:
+      main
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+    name: Create issue
+    steps:
+      - name: Create issue
+        id: create_issue
+        uses: geektrainer/demo-action@v1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo ${{ steps.create_issue.outputs.message }}
